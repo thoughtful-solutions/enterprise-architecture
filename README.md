@@ -89,7 +89,6 @@ graph TB
 classDef linkNode fill:#f6f6f6,stroke-width:0,font-weight:bold,text-align:center
 class IdentityLink,RoleRespLink,RiskMgmtLink,BusinessLink,ApplicationLink,TechnologyLink linkNode
 
-https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Technology.md
     click IdentityLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Identity.md" _blank
     click RoleRespLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/RoleResp.md" _blank
     click RiskMgmtLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/RiskMgmt.md" _blank
