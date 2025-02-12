@@ -10,7 +10,7 @@ Let's explore how the relationships within our Enterprise Architecture (EA) diag
 
 ### Value & Alignment
 
-The [Value Stream](ea-glossary.md#value-stream) to [Business Capability](ea-glossary.md#business-capability) link is fundamental, visually demonstrating how capabilities contribute to business value. The `businessDrivers` attribute reinforces this connection, clarifying the *why* behind each capability. This provides a clear line of sight from strategic goals to operational execution.
+The [Value Stream](ea-glossary.md#value-stream) to [Business Capability](ea-glossary.md#business-capability) link is fundamental, visually demonstrating how capabilities contribute to business value. The [businessDrivers](ea-glossary.md#core-attributes) attribute reinforces this connection, clarifying the *why* behind each capability. This provides a clear line of sight from strategic goals to operational execution.
 
 ### Capabilities & Processes
 

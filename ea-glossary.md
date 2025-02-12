@@ -1,4 +1,4 @@
-# Enterprise Architecture Glossary
+# Enterprise Architecture Definitions
 
 ## Core Enterprise Components
 
@@ -58,6 +58,7 @@ Central system managing user identities and organizational structure.
 ## Attribute Definitions
 
 ### Core Attributes
+- **businessDrivers**: Forces, both internal and external, that influence an organization's strategies, objectives, and decisions. These can include market conditions, regulatory requirements, technological changes, customer demands, and competitive pressures that motivate the business to take action or make changes.
 - **accountabilityLevel**: The degree and scope of responsibility for outcomes
 - **artifacts**: Outputs or deliverables produced during development
 - **buildConfigs**: Settings and parameters for compilation or assembly
