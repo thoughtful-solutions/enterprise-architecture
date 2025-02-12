@@ -58,6 +58,7 @@ Central system managing user identities and organizational structure.
 ## Attribute Definitions
 
 ### Core Attributes
+- **stakeholders**: Individuals, groups, or organizations that have a vested interest in the organization's activities, decisions, or outcomes. These can include customers, employees, shareholders, partners, regulators, and community members.
 - **businessDrivers**: Forces, both internal and external, that influence an organization's strategies, objectives, and decisions. These can include market conditions, regulatory requirements, technological changes, customer demands, and competitive pressures that motivate the business to take action or make changes.
 - **accountabilityLevel**: The degree and scope of responsibility for outcomes
 - **artifacts**: Outputs or deliverables produced during development

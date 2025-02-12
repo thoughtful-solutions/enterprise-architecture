@@ -18,7 +18,7 @@ The [Business Capability](ea-glossary.md#business-capability) to [Business Proce
 
 ### Stakeholder Needs
 
-[Organization](ea-glossary.md#organization) ownership of [Business Capability](ea-glossary.md#business-capability), and [Role](ea-glossary.md#role) enablement, clarify responsibilities. This provides a clear link between organizational structure and architectural components. The `stakeholders` attribute in [Value Stream](ea-glossary.md#value-stream) keeps stakeholder needs central.
+[Organization](ea-glossary.md#organization) ownership of [Business Capability](ea-glossary.md#business-capability), and [Role](ea-glossary.md#role) enablement, clarify responsibilities. This provides a clear link between organizational structure and architectural components. The [stakeholders](ea-glossary.md#core-attributes) attribute in [Value Stream](ea-glossary.md#value-stream) keeps stakeholder needs central.
 
 ### Risk & Security
 
