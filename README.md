@@ -59,5 +59,7 @@ By reflecting both aspirations and operational realities, the EA diagram becomes
 
 The [Enterprise Architecture Diagram](ea-diagram.md) shows the core relationships to describe the Organisations needs
 
+The [Enterprise Architecture Glossary](ea-glossary.md) contains the definitions for this Organisation
+
 ## Approach
 In the [Navigating Enterprise Architecture](navigating-ea.md) we discuss this approach
