@@ -1,4 +1,4 @@
-# Enerprise Architecture Diagram
+# Enterprise Architecture Diagram
 
 ```mermaid
 classDiagram
@@ -330,3 +330,7 @@ classDiagram
     %% verificationMethod [set]: Ways to confirm responsibility fulfillment
     %% version [single]: Specific iteration or release identifier
 ```
+
+# Enterprise Architecture Glossary
+
+The [Enterprise Architecture Glossary](ea-glossary.md) contains the definitions used
