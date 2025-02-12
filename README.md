@@ -88,12 +88,14 @@ graph TB
 
 classDef linkNode fill:#f6f6f6,stroke-width:0,font-weight:bold,text-align:center
 class IdentityLink,RoleRespLink,RiskMgmtLink,BusinessLink,ApplicationLink,TechnologyLink linkNode
-    click IdentityLink "../Identity.md" _blank
-    click RoleRespLink "../RoleResp.md" _blank
-    click RiskMgmtLink "../RiskMgmt.md" _blank
-    click BusinessLink "../Business.md" _blank
-    click ApplicationLink "../Application.md" _blank
-    click TechnologyLink "../Technology.md" _blank
+
+https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Technology.md
+    click IdentityLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Identity.md" _blank
+    click RoleRespLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/RoleResp.md" _blank
+    click RiskMgmtLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/RiskMgmt.md" _blank
+    click BusinessLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Business.md" _blank
+    click ApplicationLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Application.md" _blank
+    click TechnologyLink "https://github.com/thoughtful-solutions/enterprise-architecture/blob/main/Technology.md" _blank
 
     %% Layer Descriptions
     %% Identity & Access Layer: Manages authentication, authorization, and access control
