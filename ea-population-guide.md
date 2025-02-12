@@ -60,58 +60,58 @@ flowchart TD
 
 ### 1. Value Stream Layer
 **Source Systems**: Strategic Plans, Business Cases, Customer Journey Maps
-- Begin with identifying core value streams from strategic documentation
-- Break down each value stream into discrete stages
-- Document inputs, outputs, and KPIs for each stage
+- Begin with identifying core [Value Streams](#value-stream) from strategic documentation
+- Break down each value stream into discrete [Value Stages](#value-stage)
+- Document [inputs](#inputs) and [outputs](#outputs), and metrics for each stage
 - Ensure value streams align with strategic objectives
 
 **Example Elements**:
-- Value Stream: Customer Onboarding, Product Delivery, Service Fulfillment
-- Value Stages: Application Submission, Verification, Approval, Setup
+- [Value Stream](#value-stream): Customer Onboarding, Product Delivery, Service Fulfillment
+- [Value Stage](#value-stage): Application Submission, Verification, Approval, Setup
 
 ### 2. Business Layer
 **Source Systems**: Strategy Documents, Operating Model, Capability Framework
-- Document business capabilities from strategy documents
+- Document [Business Capabilities](#business-capability) from strategy documents
 - Map capabilities to relevant value streams
-- Identify and document business processes that realize capabilities
+- Identify and document [Business Processes](#business-process) that realize capabilities
 - Create clear relationships between processes and value stages
 
 **Example Elements**:
-- Business Capabilities: Payment Processing, Risk Assessment, Customer Service
-- Business Processes: Account Opening, Credit Evaluation, Service Activation
+- [Business Capability](#business-capability): Payment Processing, Risk Assessment, Customer Service
+- [Business Process](#business-process): Account Opening, Credit Evaluation, Service Activation
 
 ### 3. Technical Layer
 **Source Systems**: CMDB, Application Portfolio
-- Extract application inventory from CMDB
+- Extract [Application](#application) inventory from CMDB
 - For each application:
-  - Document contained packages/modules
-  - Map data entities processed
-  - Identify supporting technologies
+  - Document contained [Packages](#package)
+  - Map [Data Entities](#data-entity) processed
+  - Identify supporting [Technologies](#technology)
   - Link to supported business processes
-- Document integration points and dependencies
+- Document [integrations](#integrations) points and [dependencies](#dependencies)
 
 **Example Elements**:
-- Applications: CRM System, Payment Gateway, Document Management System
-- Data Entities: Customer Profile, Transaction Record, Product Catalog
-- Technologies: Database Systems, Integration Platforms, Cloud Services
+- [Applications](#application): CRM System, Payment Gateway, Document Management System
+- [Data Entities](#data-entity): Customer Profile, Transaction Record, Product Catalog
+- [Technologies](#technology): Database Systems, Integration Platforms, Cloud Services
 
 ### 4. Organizational Layer
 **Source Systems**: HR Systems, Service Catalog
-- Import organizational structure
-- Document service offerings
-- Define business and technical roles
-- Map responsibilities to roles
+- Import [Organization](#organization) structure
+- Document [Service](#service) offerings
+- Define business and technical [Roles](#role)
+- Map [Responsibilities](#responsibility) to roles
 - Link services to providing organizations
 
 **Example Elements**:
-- Organizations: IT Operations, Customer Service, Risk Management
-- Roles: System Administrator, Business Analyst, Risk Officer
-- Services: Application Support, Infrastructure Management, Help Desk
+- [Organizations](#organization): IT Operations, Customer Service, Risk Management
+- [Roles](#role): System Administrator, Business Analyst, Risk Officer
+- [Services](#service): Application Support, Infrastructure Management, Help Desk
 
 ### 5. Risk and Control Framework
 **Source Systems**: GRC Tools, Risk Register
-- Import risk register
-- Document control framework
+- Import [Risk](#risk) register
+- Document [Risk Control](#risk-control) framework
 - Map controls to:
   - Business processes
   - Applications
@@ -119,37 +119,37 @@ flowchart TD
 - Ensure completeness of control coverage
 
 **Example Elements**:
-- Risks: Data Privacy, System Availability, Regulatory Compliance
-- Controls: Access Management, Change Control, Monitoring Procedures
+- [Risks](#risk): Data Privacy, System Availability, Regulatory Compliance
+- [Controls](#risk-control): Access Management, Change Control, Monitoring Procedures
 
 ### 6. Access Management Layer
 **Source Systems**: Identity Management Systems, Directory Services
-- Document IAM architecture
-- Map RBAC policies to organizational roles
-- Link directory services to IAM implementation
+- Document [IAM](#iam-identity-and-access-management) architecture
+- Map [RBAC](#rbac-role-based-access-control) policies to organizational roles
+- Link [Directory Service](#directory-service) to IAM implementation
 - Validate access rights against responsibilities
 
 **Example Elements**:
-- IAM Components: Identity Store, Access Control, Authentication Services
-- RBAC Policies: Role Definitions, Permission Sets, Access Rules
+- [IAM](#iam-identity-and-access-management) Components: Identity Store, Access Control, Authentication Services
+- [RBAC](#rbac-role-based-access-control) Policies: Role Definitions, Permission Sets, Access Rules
 
 ## Critical Success Factors
 
 ### Documentation Standards
-- Maintain consistent naming conventions
+- Maintain consistent [naming](#name) conventions
 - Document clear relationships and dependencies
 - Keep source system references
-- Version control all artifacts
+- [Version](#version) control all artifacts
 
 ### Governance
-- Regular stakeholder validation
+- Regular [stakeholder](#stakeholders) validation
 - Change management process
 - Periodic review and updates
 - Quality assurance checks
 
 ### Implementation Approach
 - Start with high-priority value streams
-- Implement in phases
+- Implement in [stages](#stages)
 - Regular validation points
 - Continuous improvement cycle
 
