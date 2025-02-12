@@ -1,0 +1,9 @@
+graph LR
+  subgraph Authentication
+    A[Username/Password] --> B[Multi-Factor Auth]
+  end
+  subgraph Authorization
+    C[RBAC] --> D[ABAC]
+  end
+  A --> C
+  B --> C

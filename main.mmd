@@ -1,0 +1,14 @@
+graph TB
+    subgraph Identity["Identity & Access Layer"]
+        direction LR
+        DS[Directory Services] --> IAM[Identity & Access Management] --> RBAC[Role Based Access Control]
+        click Identity href "identity.mmd" "Go to Identity Details"  // Link to identity.mmd
+    end
+    subgraph RoleResp["Role & Responsibility Layer"]
+        direction LR
+        ROLE[Roles] --> RESP[Responsibilities]
+        click RoleResp href "role_resp.mmd" "Go to Role Resp Details" // Link to role_resp.mmd
+    end
+    Identity --> RoleResp
+
+    linkStyle 0,1 stroke:#00f,stroke-width:2px; // Style for the link (optional)
