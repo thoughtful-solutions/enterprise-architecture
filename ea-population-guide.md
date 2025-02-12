@@ -60,58 +60,58 @@ flowchart TD
 
 ### 1. Value Stream Layer
 **Source Systems**: Strategic Plans, Business Cases, Customer Journey Maps
-- Begin with identifying core [Value Streams](#value-stream) from strategic documentation
-- Break down each value stream into discrete [Value Stages](#value-stage)
-- Document [inputs](#inputs) and [outputs](#outputs), and metrics for each stage
+- Begin with identifying core [Value Stream](ea-glossary.md#value-stream) from strategic documentation
+- Break down each value stream into discrete [Value Stage](ea-glossary.md#value-stage)
+- Document [inputs](ea-glossary.md#inputs) and [outputs](ea-glossary.md#outputs), and metrics for each stage
 - Ensure value streams align with strategic objectives
 
 **Example Elements**:
-- [Value Stream](#value-stream): Customer Onboarding, Product Delivery, Service Fulfillment
-- [Value Stage](#value-stage): Application Submission, Verification, Approval, Setup
+- [Value Stream](ea-glossary.md#value-stream): Customer Onboarding, Product Delivery, Service Fulfillment
+- [Value Stage](ea-glossary.md#value-stage): Application Submission, Verification, Approval, Setup
 
 ### 2. Business Layer
 **Source Systems**: Strategy Documents, Operating Model, Capability Framework
-- Document [Business Capabilities](#business-capability) from strategy documents
+- Document [Business Capability](ea-glossary.md#business-capability) from strategy documents
 - Map capabilities to relevant value streams
-- Identify and document [Business Processes](#business-process) that realize capabilities
+- Identify and document [Business Process](ea-glossary.md#business-process) that realize capabilities
 - Create clear relationships between processes and value stages
 
 **Example Elements**:
-- [Business Capability](#business-capability): Payment Processing, Risk Assessment, Customer Service
-- [Business Process](#business-process): Account Opening, Credit Evaluation, Service Activation
+- [Business Capability](ea-glossary.md#business-capability): Payment Processing, Risk Assessment, Customer Service
+- [Business Process](ea-glossary.md#business-process): Account Opening, Credit Evaluation, Service Activation
 
 ### 3. Technical Layer
 **Source Systems**: CMDB, Application Portfolio
-- Extract [Application](#application) inventory from CMDB
+- Extract [Application](ea-glossary.md#application) inventory from CMDB
 - For each application:
-  - Document contained [Packages](#package)
-  - Map [Data Entities](#data-entity) processed
-  - Identify supporting [Technologies](#technology)
+  - Document contained [Package](ea-glossary.md#package)
+  - Map [Data Entity](ea-glossary.md#data-entity) processed
+  - Identify supporting [Technology](ea-glossary.md#technology)
   - Link to supported business processes
-- Document [integrations](#integrations) points and [dependencies](#dependencies)
+- Document [integrations](ea-glossary.md#integrations) points and [dependencies](ea-glossary.md#dependencies)
 
 **Example Elements**:
-- [Applications](#application): CRM System, Payment Gateway, Document Management System
-- [Data Entities](#data-entity): Customer Profile, Transaction Record, Product Catalog
-- [Technologies](#technology): Database Systems, Integration Platforms, Cloud Services
+- [Application](ea-glossary.md#application): CRM System, Payment Gateway, Document Management System
+- [Data Entity](ea-glossary.md#data-entity): Customer Profile, Transaction Record, Product Catalog
+- [Technology](ea-glossary.md#technology): Database Systems, Integration Platforms, Cloud Services
 
 ### 4. Organizational Layer
 **Source Systems**: HR Systems, Service Catalog
-- Import [Organization](#organization) structure
-- Document [Service](#service) offerings
-- Define business and technical [Roles](#role)
-- Map [Responsibilities](#responsibility) to roles
+- Import [Organization](ea-glossary.md#organization) structure
+- Document [Service](ea-glossary.md#service) offerings
+- Define business and technical [Role](ea-glossary.md#role)
+- Map [Responsibility](ea-glossary.md#responsibility) to roles
 - Link services to providing organizations
 
 **Example Elements**:
-- [Organizations](#organization): IT Operations, Customer Service, Risk Management
-- [Roles](#role): System Administrator, Business Analyst, Risk Officer
-- [Services](#service): Application Support, Infrastructure Management, Help Desk
+- [Organization](ea-glossary.md#organization): IT Operations, Customer Service, Risk Management
+- [Role](ea-glossary.md#role): System Administrator, Business Analyst, Risk Officer
+- [Service](ea-glossary.md#service): Application Support, Infrastructure Management, Help Desk
 
 ### 5. Risk and Control Framework
 **Source Systems**: GRC Tools, Risk Register
-- Import [Risk](#risk) register
-- Document [Risk Control](#risk-control) framework
+- Import [Risk](ea-glossary.md#risk) register
+- Document [Risk Control](ea-glossary.md#risk-control) framework
 - Map controls to:
   - Business processes
   - Applications
@@ -119,37 +119,37 @@ flowchart TD
 - Ensure completeness of control coverage
 
 **Example Elements**:
-- [Risks](#risk): Data Privacy, System Availability, Regulatory Compliance
-- [Controls](#risk-control): Access Management, Change Control, Monitoring Procedures
+- [Risk](ea-glossary.md#risk): Data Privacy, System Availability, Regulatory Compliance
+- [Risk Control](ea-glossary.md#risk-control): Access Management, Change Control, Monitoring Procedures
 
 ### 6. Access Management Layer
 **Source Systems**: Identity Management Systems, Directory Services
-- Document [IAM](#iam-identity-and-access-management) architecture
-- Map [RBAC](#rbac-role-based-access-control) policies to organizational roles
-- Link [Directory Service](#directory-service) to IAM implementation
+- Document [IAM](ea-glossary.md#iam-identity-and-access-management) architecture
+- Map [RBAC](ea-glossary.md#rbac-role-based-access-control) policies to organizational roles
+- Link [Directory Service](ea-glossary.md#directory-service) to IAM implementation
 - Validate access rights against responsibilities
 
 **Example Elements**:
-- [IAM](#iam-identity-and-access-management) Components: Identity Store, Access Control, Authentication Services
-- [RBAC](#rbac-role-based-access-control) Policies: Role Definitions, Permission Sets, Access Rules
+- [IAM](ea-glossary.md#iam-identity-and-access-management) Components: Identity Store, Access Control, Authentication Services
+- [RBAC](ea-glossary.md#rbac-role-based-access-control) Policies: Role Definitions, Permission Sets, Access Rules
 
 ## Critical Success Factors
 
 ### Documentation Standards
-- Maintain consistent [naming](#name) conventions
+- Maintain consistent [name](ea-glossary.md#name) conventions
 - Document clear relationships and dependencies
 - Keep source system references
-- [Version](#version) control all artifacts
+- [version](ea-glossary.md#version) control all artifacts
 
 ### Governance
-- Regular [stakeholder](#stakeholders) validation
+- Regular [stakeholders](ea-glossary.md#stakeholders) validation
 - Change management process
 - Periodic review and updates
 - Quality assurance checks
 
 ### Implementation Approach
 - Start with high-priority value streams
-- Implement in [stages](#stages)
+- Implement in [stages](ea-glossary.md#stages)
 - Regular validation points
 - Continuous improvement cycle
 
