@@ -1,11 +1,11 @@
 # Enterprise Architecture
 
 ```mermaid
-graph TB
+graph LR
     %% Layer Definitions
     subgraph Identity[" "]
         IdentityLink["<b>Identity & Access Layer<b>"]
-        direction LR
+        direction TB
         DS[Directory Services]
         IAM[Identity & Access Management]
         RBAC[Role Based Access Control]
@@ -14,7 +14,7 @@ graph TB
 
     subgraph RoleResp[" "]
         RoleRespLink["<b>Role & Responsibility Layer<b>"]
-        direction LR
+        direction TB
         ROLE[Roles]
         RESP[Responsibilities]
         ROLE --> RESP
@@ -22,7 +22,7 @@ graph TB
 
     subgraph RiskMgmt[" "]
         RiskMgmtLink["<b>Risk Management Layer<b>"]
-        direction LR
+        direction TB
         RISK[Risks]
         CTRL[Controls]
         RISK --> CTRL
@@ -30,7 +30,7 @@ graph TB
 
     subgraph Business[" "]
         BusinessLink["<b>Business Architecture Layer<b>"]
-        direction LR
+        direction TB
         CAP[Business Capabilities]
         PROC[Business Processes]
         VS[Value Streams]
@@ -42,7 +42,7 @@ graph TB
 
     subgraph Application[" "]
         ApplicationLink["<b>Application Layer<b>"]
-        direction LR
+        direction TB
         APP[Applications]
         PKG[Packages]
         SVC[Services]
@@ -54,7 +54,7 @@ graph TB
 
     subgraph Technology[" "]
         TechnologyLink["<b>Technology Layer<b>"]
-        direction LR
+        direction TB
         INFRA[Infrastructure]
         PLATFORM[Platforms]
         NETWORK[Networks]
