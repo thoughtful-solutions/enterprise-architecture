@@ -1,282 +1,207 @@
 # Enterprise Architecture Dashboards
 
-## 1. Risk Exposure Dashboard
+## 1. Strategic Capability Dashboard
 
+### Purpose and Value
+- Provides strategic overview of organizational capability maturity
+- Identifies gaps in capability development
+- Supports investment decision-making
+- Enables tracking of capability improvement initiatives
+- Helps prioritize transformation efforts
+
+### Data Sources
+From BusinessCapability class:
+- maturityLevel [single]
+- strategicValue [single]
+- status [single]
+- businessDrivers [set]
+
+Additional context from:
+- Organization.owner relationship to BusinessCapability
+- Role relationship "enables" to BusinessCapability
+
+### Key Visualizations
 ```mermaid
-pie title Risk Distribution by Impact Level
-    "High Impact" : 15
-    "Medium Impact" : 45
-    "Low Impact" : 40
+pie
+    title Business Capability Maturity Distribution
+    "Level 1 - Initial" : 15
+    "Level 2 - Managed" : 25
+    "Level 3 - Defined" : 35
+    "Level 4 - Measured" : 15
+    "Level 5 - Optimized" : 10
 ```
+
+## 2. Risk Management Dashboard
+
+### Purpose and Value
+- Visualizes enterprise risk landscape
+- Prioritizes risk mitigation efforts
+- Tracks effectiveness of control measures
+- Supports resource allocation for risk management
+- Enables proactive risk management
+
+### Data Sources
+From Risk class:
+- likelihood [single]
+- impact [single]
+- mitigations [ordered-list]
+- owner [single]
+
+From RiskControl class:
+- effectiveness [single]
+- cost [single]
+- status [single]
+
+Relationships:
+- Risk "threatens" BusinessCapability
+- Risk "impacts" Application
+- Risk "affects" Technology
+- Risk "endangers" DataEntity
+
+### Key Visualizations
 ```mermaid
-pie title Risk Control Status
-    "Implemented" : 65
-    "In Progress" : 20
-    "Not Started" : 15
+quadrantChart
+    title Risk Assessment Matrix
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 Monitor
+    quadrant-2 Urgent Action Required
+    quadrant-3 Accept
+    quadrant-4 Active Management
+    "Legacy System Failure": [0.8, 0.6]
+    "Data Breach": [0.9, 0.4]
+    "Vendor Lock-in": [0.5, 0.7]
+    "Skills Gap": [0.6, 0.8]
+    "Tech Debt": [0.7, 0.5]
+    "Integration Issues": [0.4, 0.3]
 ```
 
-### Data Sources and Interpretation
+## 3. Application Portfolio Dashboard
 
-This dashboard visualizes [Risk](ea-glossary.md#risk) distribution across the enterprise. The data is sourced from:
+### Purpose and Value
+- Tracks application lifecycle status
+- Identifies modernization opportunities
+- Manages technical debt
+- Plans application retirement
+- Optimizes application investments
 
-- **Risk Impact Distribution**:
-  - Derived from the `impact` attribute of [Risk](ea-glossary.md#risk) entities
-  - Categorized by impact levels defined in `likelihood` and `impact` attributes
-  - Links to affected [BusinessCapability](ea-glossary.md#business-capability) entities through the "threatens" relationship
+### Data Sources
+From Application class:
+- lifecycle [single]
+- version [single]
+- businessOwner [single]
 
-- **Risk Control Status**:
-  - Based on [RiskControl](ea-glossary.md#risk-control) entities
-  - Tracks `effectiveness` and `status` attributes
-  - Maps to `mitigations` attribute in [Risk](ea-glossary.md#risk) entities
+From Package class:
+- dependencies [set]
+- securityProfile [map]
+- buildConfigs [map]
 
-## 2. System Lifecycle Timeline
+Additional context:
+- Application "supported by" BusinessProcess
+- Role "uses" Application relationship
 
+### Key Visualizations
+```mermaid
+xychart-beta
+    title Application Lifecycle Status
+    x-axis [Q1, Q2, Q3, Q4]
+    y-axis "Number of Applications" 0 --> 50
+    line "Active" [ 40, 42, 45, 48 ]
+    line "Maintenance" [30, 28, 25, 22]
+    line "End-of-Life" [10, 12, 15, 18] 
+```
+
+## 4. Value Stream Performance Dashboard
+
+### Purpose and Value
+- Measures end-to-end value delivery
+- Identifies process bottlenecks
+- Tracks value stream efficiency
+- Supports continuous improvement
+- Aligns capabilities with value delivery
+
+### Data Sources
+From ValueStream class:
+- metrics [set]
+- stages [ordered-list]
+- value [single]
+- stakeholders [set]
+
+From ValueStage class:
+- duration [single]
+- efficiency [single]
+- inputs [set]
+- outputs [set]
+
+Related data:
+- ValueStream "requires" BusinessCapability
+- ValueStage "utilizes" BusinessProcess
+
+### Key Visualizations
+```mermaid
+sankey-beta
+%% source,target,value
+    Customer Request,Initial Assessment,95
+    Initial Assessment,Development,80   
+    Development,Testing,75
+    Testing,Deployment,70
+    Deployment,Production,65
+    Production,Customer Value,60 
+```
+
+## 5. Technology Implementation Dashboard
+
+### Purpose and Value
+- Tracks implementation timelines
+- Manages project dependencies
+- Coordinates technology rollouts
+- Supports resource planning
+- Monitors implementation progress
+
+### Data Sources
+From Technology class:
+- lifecycle [single]
+- version [single]
+- support [map]
+
+From Package class:
+- deploymentRules [set]
+- buildConfigs [map]
+
+Integration data from:
+- IAM "enforces" RBAC
+- DirectoryService "feeds" IAM
+- Package "runs on" Technology
+
+### Key Visualizations
 ```mermaid
 gantt
-    title Application Lifecycle Timeline
+    title Technology Implementation Roadmap
     dateFormat  YYYY-MM-DD
-    section CRM System
-    Current Version    :done, crm1, 2024-01-01, 2024-06-30
-    Upgrade Planning   :active, crm2, 2024-05-01, 2024-07-30
-    Implementation    :crm3, 2024-07-01, 2024-12-31
-    section ERP
-    Legacy System     :done, erp1, 2024-01-01, 2024-09-30
-    Migration Prep    :active, erp2, 2024-07-01, 2024-10-31
-    New System       :erp3, 2024-10-01, 2025-03-31
-    section Data Warehouse
-    Current Phase    :active, dw1, 2024-01-01, 2024-12-31
-    Modernization    :dw2, 2024-10-01, 2025-06-30
+    section IAM Modernization
+    Requirements Analysis    :a1, 2025-03-01, 30d
+    Design                  :a2, after a1, 45d
+    Implementation         :a3, after a2, 60d
+    Testing                :a4, after a3, 30d
+    
+    section RBAC Enhancement
+    Policy Review          :b1, 2025-03-15, 45d
+    Implementation        :b2, after b1, 60d
+    
+    section Directory Service Update
+    Planning              :c1, 2025-04-01, 30d
+    Migration            :c2, after c1, 90d
 ```
 
-### Data Sources and Interpretation
+## Data Refresh Considerations
 
-This timeline tracks the lifecycle of key [Application](ea-glossary.md#application) entities. Data is sourced from:
-
-- **Application Status**:
-  - `lifecycle` attribute of [Application](ea-glossary.md#application) entities
-  - `version` tracking from [Package](ea-glossary.md#package) entities
-  - `deploymentRules` from associated [Package](ea-glossary.md#package) entities
-
-- **Technology Stack**:
-  - [Technology](ea-glossary.md#technology) entities supporting each application
-  - `vendor` and `version` attributes
-  - `lifecycle` status of underlying technologies
-
-## 3. Business Capability Maturity
-
-```mermaid
-pie title Capability Maturity Distribution
-    "Level 5 (Optimized)" : 10
-    "Level 4 (Managed)" : 25
-    "Level 3 (Defined)" : 35
-    "Level 2 (Repeatable)" : 20
-    "Level 1 (Initial)" : 10
-```
-```mermaid
-pie title Value Stream Performance
-    "Exceeding Target" : 30
-    "Meeting Target" : 45
-    "Below Target" : 25
-```
-
-### Data Sources and Interpretation
-
-This dashboard visualizes the maturity of [BusinessCapability](ea-glossary.md#business-capability) entities and their associated [ValueStream](ea-glossary.md#value-stream) performance:
-
-- **Capability Maturity**:
-  - Based on `maturityLevel` attribute of [BusinessCapability](ea-glossary.md#business-capability) entities
-  - Influenced by `strategicValue` assessment
-  - Connected to `businessDrivers` showing strategic alignment
-
-- **Value Stream Performance**:
-  - Derived from `metrics` in [ValueStream](ea-glossary.md#value-stream) entities
-  - Performance of associated [ValueStage](ea-glossary.md#value-stage) entities
-  - Tracks `efficiency` and `effectiveness` metrics
-
-## 4. Technology Modernization Timeline
-
-```mermaid
-gantt
-    title Technology Stack Modernization Timeline
-    dateFormat  YYYY-MM-DD
-    section Database Platform
-    Oracle 19c Migration    :active, db1, 2024-01-01, 2024-09-30
-    PostgreSQL Evaluation   :db2, 2024-07-01, 2024-12-31
-    section Application Servers
-    WebLogic Upgrade       :active, as1, 2024-03-01, 2024-08-31
-    Container Migration    :as2, 2024-06-01, 2025-03-31
-    section Integration Layer
-    ESB Deprecation       :active, int1, 2024-01-01, 2024-12-31
-    API Gateway Implementation :int2, 2024-04-01, 2025-02-28
-```
-
-### Data Sources and Interpretation
-
-This timeline tracks the modernization of [Technology](ea-glossary.md#technology) components:
-
-- **Platform Updates**:
-  - Tracks `lifecycle` stages of [Technology](ea-glossary.md#technology) entities
-  - Maps to `dependencies` in [Package](ea-glossary.md#package) entities
-  - Considers `support` arrangements and vendor relationships
-
-- **Integration Evolution**:
-  - Based on [Service](ea-glossary.md#service) implementation changes
-  - Tracks `sla` requirements and performance
-  - Maps to [Application](ea-glossary.md#application) integration points
-
-## Dashboard Update Frequency
-
-- **Real-time Updates**:
-  - Risk metrics from [Risk](ea-glossary.md#risk) and [RiskControl](ea-glossary.md#risk-control) entities
-  - [Application](ea-glossary.md#application) status changes
-  - [Service](ea-glossary.md#service) performance metrics
-
-- **Weekly Updates**:
-  - [Technology](ea-glossary.md#technology) lifecycle status
-  - [Package](ea-glossary.md#package) deployment status
-  - Integration health metrics
-
-- **Monthly Updates**:
-  - [BusinessCapability](ea-glossary.md#business-capability) maturity assessments
-  - [ValueStream](ea-glossary.md#value-stream) performance metrics
-  - Strategic alignment measures
-
-## 5. EA Health Dashboard
-
-```mermaid
-pie title Application Lifecycle Distribution
-    "Modern" : 35
-    "Mainstream" : 40
-    "Legacy" : 15
-    "Sunset" : 10
-```
-```mermaid
-pie title Technology Stack Status
-    "Current" : 45
-    "Supported" : 30
-    "Deprecated" : 15
-    "End of Life" : 10
-```
-
-### Data Sources and Interpretation
-
-This dashboard provides a comprehensive view of enterprise architecture health metrics:
-
-- **Application Portfolio Health**:
-  - Derived from [Application](ea-glossary.md#application) entities' `lifecycle` attribute
-  - Tracks `version` status across [Package](ea-glossary.md#package) entities
-  - Maps to [Technology](ea-glossary.md#technology) dependencies
-
-- **Business Architecture Status**:
-  - [BusinessCapability](ea-glossary.md#business-capability) `maturityLevel` distribution
-  - [ValueStream](ea-glossary.md#value-stream) efficiency metrics
-  - Critical [Risk](ea-glossary.md#risk) exposure and mitigation status
-
-```mermaid
-gantt
-    title Value Stream Cycle Time Analysis
-    dateFormat YYYY-MM-DD
-    section Order to Cash
-    Current Cycle    :done, o2c1, 2024-01-01, 2024-01-15
-    Target Cycle     :active, o2c2, 2024-01-01, 2024-01-10
-    section Procure to Pay
-    Current Cycle    :done, p2p1, 2024-01-01, 2024-01-20
-    Target Cycle     :active, p2p2, 2024-01-01, 2024-01-12
-```
-
-## 6. Digital Transformation Progress Dashboard
-
-```mermaid
-pie title Digital Initiative Status
-    "Completed" : 30
-    "In Progress" : 45
-    "Planned" : 25
-```
-```mermaid
-pie title Technology Adoption Rate
-    "High Adoption" : 40
-    "Medium Adoption" : 35
-    "Low Adoption" : 25
-```
-
-### Data Sources and Interpretation
-
-This dashboard tracks digital transformation progress through:
-
-- **Initiative Tracking**:
-  - Maps to [BusinessCapability](ea-glossary.md#business-capability) enhancement projects
-  - Tracks [Service](ea-glossary.md#service) modernization efforts
-  - Measures adoption of new [Technology](ea-glossary.md#technology) platforms
-
-```mermaid
-gantt
-    title Digital Initiative Timeline
-    dateFormat YYYY-MM-DD
-    section Cloud Migration
-    Infrastructure    :done, cloud1, 2024-01-01, 2024-06-30
-    Applications     :active, cloud2, 2024-04-01, 2024-12-31
-    section Digital Workplace
-    Collaboration Tools :done, dw1, 2024-01-01, 2024-03-31
-    Remote Work Platform :active, dw2, 2024-02-01, 2024-07-31
-```
-
-- **Value Realization**:
-  - Based on [ValueStream](ea-glossary.md#value-stream) `metrics`
-  - Customer satisfaction tracking through [Service](ea-glossary.md#service) `sla` metrics
-  - Employee feedback on digital tools adoption
-
-## 7. IT Efficiency Dashboard
-
-```mermaid
-pie title IT Spend Distribution
-    "Infrastructure" : 30
-    "Applications" : 35
-    "Services" : 25
-    "Innovation" : 10
-```
-```mermaid
-pie title IT Service Performance
-    "Meeting SLA" : 75
-    "Near Target" : 15
-    "Below Target" : 10
-```
-
-### Data Sources and Interpretation
-
-This dashboard monitors IT operational efficiency through:
-
-- **Resource Utilization**:
-  - [Technology](ea-glossary.md#technology) platform usage metrics
-  - [Application](ea-glossary.md#application) performance indicators
-  - Infrastructure capacity tracking
-
-```mermaid
-gantt
-    title IT Project Delivery Timeline
-    dateFormat YYYY-MM-DD
-    section Infrastructure Projects
-    Network Upgrade    :done, net1, 2024-01-01, 2024-03-31
-    Security Enhancement :active, sec1, 2024-02-01, 2024-06-30
-    section Application Projects
-    CRM Upgrade        :active, crm1, 2024-01-01, 2024-07-31
-    ERP Migration      :crit, erp1, 2024-04-01, 2024-12-31
-```
-
-- **Service Performance**:
-  - [Service](ea-glossary.md#service) availability metrics from `sla` tracking
-  - Incident resolution times from support systems
-  - Project delivery metrics against planned timelines
-
-## Data Quality and Governance
-
-All dashboard data is subject to governance through:
-
-- **Ownership**:
-  - Clear mapping to `owner` and `businessOwner` attributes
-  - [Role](ea-glossary.md#role)-based access through [RBAC](ea-glossary.md#rbac)
-  - Defined `accountabilityLevel` for data maintenance
-
-- **Quality Measures**:
-  - Data `quality` attributes tracking
-  - Regular verification through `verificationMethod`
-  - Automated validation through [IAM](ea-glossary.md#iam) systems
+For all dashboards:
+- Business Capability and Value Stream metrics should be updated quarterly
+- Risk assessments should be reviewed monthly
+- Application and Technology status should be updated weekly
+- Implementation progress should be tracked daily
+- All metrics should be versioned to enable trend analysis
+- Data quality should be validated through automated checks
+- Manual review processes should be established for critical metrics
+- Automated data collection should be implemented where possible
+- Change logs should be maintained for audit purposes
