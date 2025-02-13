@@ -136,10 +136,10 @@ flowchart TD
 ## Critical Success Factors
 
 ### Documentation Standards
-- Maintain consistent [name](ea-glossary.md#name) conventions
+- Maintain consistent [naming](ea-glossary.md#naming) conventions
 - Document clear relationships and dependencies
 - Keep source system references
-- [version](ea-glossary.md#version) control all artifacts
+- [version control](ea-glossary.md#version-control) all artifacts
 
 ### Governance
 - Regular [stakeholders](ea-glossary.md#stakeholders) validation

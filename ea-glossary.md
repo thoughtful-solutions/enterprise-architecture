@@ -3,15 +3,19 @@
 ## Core Enterprise Components
 
 ### Value Stream
+
 Represents an end-to-end sequence of activities that creates value for customers or stakeholders. Serves as a fundamental framework for understanding how value is delivered across the organization.
 
 ### Value Stage
+
 A discrete step or phase within a value stream that transforms specific inputs into outputs. Each stage contributes to the overall value creation process with measurable metrics.
 
 ### Risk
+
 A potential event or condition that could negatively impact organizational objectives. Includes assessment of both probability and impact along with mitigation strategies.
 
 ### Risk Control
+
 A measure or action designed to modify risk through prevention, detection, or mitigation. Provides specific mechanisms to manage identified risks.
 
 ### Business Capability
@@ -27,33 +31,65 @@ A software system providing specific business functionality to end users. Repres
 A deployable component or module of an application with specific functionality. Represents the smallest deployable unit of software in the architecture.
 
 ### Data Entity
+
 A logical representation of information that is created, stored, and used by the business. Defines the structure and characteristics of business information.
 
 ### Technology
+
 Infrastructure and platforms that support applications and data processing. Represents the technical foundation of the enterprise architecture.
 
 ### Organization
+
 A structural unit within the enterprise with defined responsibilities. Represents the organizational context for capabilities and processes.
 
 ### Service
+
 A defined offering that provides value to consumers through specific outcomes. Represents how capabilities are packaged and delivered to stakeholders.
 
 ### Role
+
 A defined set of functions and duties assigned to individuals or teams. Represents who performs work and makes decisions in the organization.
 
 ### Responsibility
+
 A specific duty or obligation assigned to a role. Defines what a role is accountable for and how it is measured.
 
 ## System Components
 
 ### IAM (Identity and Access Management)
+
 Identity and Access Management system controlling authentication and authorization.
 
 ### RBAC (Role-Based Access Control)
+
 Role-Based Access Control system implementing security policies.
 
 ### Directory Service
+
 Central system managing user identities and organizational structure.
+
+## Naming
+
+A naming convention is a formal system of rules and patterns that governs how identifiers are created and assigned across the enterprise. It establishes formats that are both machine-readable for automated processes and meaningful to human operators and consumers. The convention ensures names can be deterministically generated and validated while conveying essential information about the component's purpose, ownership, and lifecycle state. An effective naming convention maintains uniqueness within defined scopes, enables reliable component discovery and system integration, and provides immediate clarity to stakeholders about what they're interacting with and how it fits into the broader enterprise architecture.
+This definition adds the key aspects of:
+
+* Human readability and understanding
+* Support for machine parsing and automation
+* Component purpose communication
+* Stakeholder clarity
+* System context indication
+
+## Version Control
+
+Version control is a systematic approach to tracking changes that creates an immutable, cryptographically verifiable record of what changed, when, why, and by whom. Unlike document-based change tracking, version control provides an authoritative system-wide audit trail that cannot be circumvented or altered after the fact, capturing not just documentation but code, configurations, infrastructure definitions, and the relationships between them. Its centrality to enterprise architecture stems from its ability to definitively answer audit questions about any system state or change, maintain compliance through verifiable history, and trace every production state back to specific business decisions and authorizations. This systematic change capture is fundamental to regulated environments and complex systems where understanding the exact state of components at any point in time is essential for security, operations, and compliance.
+The key differentiators from document tracking are:
+
+* Cryptographic verification of change history
+* Immutable record keeping
+* System-wide scope rather than document-level
+* Capture of relationships between changes
+* Ability to reproduce exact states
+
 
 ## Attribute Definitions
 
