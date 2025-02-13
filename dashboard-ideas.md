@@ -192,6 +192,58 @@ gantt
     Planning              :c1, 2025-04-01, 30d
     Migration            :c2, after c1, 90d
 ```
+## 6. Heatmap Visualizations
+
+```mermaid
+
+block-beta
+    columns 5
+    01[" "] 02[" "] 03[" "] 04[" "] 05[" "]
+    06[" "] 07[" "] 08[" "] 09[" "] 10[" "]
+    11[" "] 12[" "] 13[" "] 14[" "] 15[" "]
+    16[" "] 17[" "] 18[" "] 19[" "] 20[" "]
+    
+    %% Light Red
+    style 01 fill:#FF6666,stroke:0,stroke-width:0px
+    %% Lighter Red
+    style 02 fill:#FF7777,stroke:0,stroke-width:0px
+    %% Pale Red
+    style 03 fill:#FF8888,stroke:0,stroke-width:0px
+    %% Very Pale Red
+    style 04 fill:#FF9999,stroke:0,stroke-width:0px
+    %% Bright Red
+    style 05 fill:#FF0000,stroke:0,stroke-width:0px
+    %% Very Pale Red
+    style 06 fill:#FF9999,stroke:0,stroke-width:0px
+    %% Tan Orange
+    style 07 fill:#E6C5A3,stroke:0,stroke-width:0px
+    %% Tan Orange
+    style 08 fill:#E6C5A3,stroke:0,stroke-width:0px
+    %% Tan Orange
+    style 09 fill:#E6C5A3,stroke:0,stroke-width:0px
+    %% Tan Orange
+    style 10 fill:#E6C5A3,stroke:0,stroke-width:0px
+    %% Pale Green
+    style 11 fill:#B8E0A1,stroke:0,stroke-width:0px
+    %% Sage Green
+    style 12 fill:#D4D4A2,stroke:0,stroke-width:0px
+    %% Sage Green
+    style 13 fill:#D4D4A2,stroke:0,stroke-width:0px
+    %% Sage Green
+    style 14 fill:#D4D4A2,stroke:0,stroke-width:0px
+    %% Sage Green
+    style 15 fill:#D4D4A2,stroke:0,stroke-width:0px
+    %% Light Green
+    style 16 fill:#90EE90,stroke:0,stroke-width:0px
+    %% Pale Green
+    style 17 fill:#B8E0A1,stroke:0,stroke-width:0px
+    %% Pale Green
+    style 18 fill:#B8E0A1,stroke:0,stroke-width:0px
+    %% Pale Green
+    style 19 fill:#B8E0A1,stroke:0,stroke-width:0px
+    %% Pale Green
+    style 20 fill:#B8E0A1,stroke:0,stroke-width:0px
+```
 
 ## Data Refresh Considerations
 
@@ -204,4 +256,4 @@ For all dashboards:
 - Data quality should be validated through automated checks
 - Manual review processes should be established for critical metrics
 - Automated data collection should be implemented where possible
-- Change logs should be maintained for audit purposes
+- Change logs should be maintained for audit purpose
